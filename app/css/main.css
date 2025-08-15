@@ -116,6 +116,11 @@ img {
     color: var(--costal-mist);
 }
 
+.cta-primary-inverse {
+    background-color: var(--blue-trench);
+    color: var(--sea-foam-sky);
+}
+
 body {
     font-family: var(--ff-main);
     font-size: var(--body-copy);
