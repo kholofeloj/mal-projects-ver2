@@ -10,12 +10,14 @@
     --tide-break: rgba(1, 138, 190, 1);
     --costal-mist: rgba(151, 202, 219, 1);
     --sea-foam-sky: rgba(222, 232, 241, 1);
+    --sea-foam-sky100: rgba(222, 232, 241, .95);
     
     /*        Gradients          */
     /*****************************/
     
     --blue-fade: linear-gradient(90deg, rgb(1,138,190), rgba(1,138,190,0));
     --bluetrench-fade: linear-gradient(90deg, rgba(0, 68, 129, 1), rgba(0, 68, 129, 0));
+    --deepcurrent-fade: linear-gradient(90deg, rgba(0, 27, 72, 1) 30%, rgba(0, 27, 72, 0.5));
     
     
     /*        Typography          */
@@ -28,7 +30,8 @@
     
     --body-copy: 1.25rem;
     --card-copy: 1.125rem;
-    --title: 2rem;
+    --hero-title: 2.75rem;
+    --title: 2.25rem;
     --subheading: 1.5rem;
     --section-title: 1.75rem;
 
@@ -69,6 +72,7 @@
 
 li {
     text-decoration: none;
+    list-style: none;
 }
 
 a {
@@ -80,8 +84,161 @@ img {
     height: 100%;
 }
 
+.container {
+    max-width: 1200px;
+    width: 95%;
+    margin-inline: auto;
+}
+
+.cta {
+    padding: 16px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: all 250ms ease-in-out;
+    font-weight: var(--fw-500);
+}
+
+.cta-primary {
+    background-color: var(--sea-foam-sky);
+}
+
+.cta-primary:hover {
+    background-color: var(--sea-foam-sky100);
+}
+
+.cta-secondary {
+    border: 2px solid var(--tide-break);
+    color: var(--sea-foam-sky);
+}
+
+.cta-secondary:hover {
+    border: 2px solid var(--costal-mist);
+    color: var(--costal-mist);
+}
 
 body {
     font-family: var(--ff-main);
+    font-size: var(--body-copy);
 }
 
+
+/*******************************************************/
+/*                    email header                     */
+/*******************************************************/
+
+.email-header {
+    background: var(--deep-current);
+    padding: 6px 0;
+    text-align: center;
+}
+
+.email-contact {
+    color: var(--sea-foam-sky);
+    font-size: 1rem;
+    transition: all 250ms ease-in-out;
+}
+
+.email-contact:hover {
+    color: var(--tide-break);
+}
+
+/*******************************************************/
+/*                       Navbar                        */
+/*******************************************************/
+
+.navbar {
+    height: 70px;
+    width: 100%;
+    background-color: var(--sea-foam-sky);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    display: flex;
+
+}
+
+.logo img {
+    height: 60px;
+    align-self: center;
+}
+
+.nav-menu {
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+}
+
+.link-item {
+    text-transform: uppercase;
+    font-weight: var(--fw-500);
+    padding: 10px 0;
+    transition: all 250ms ease-in-out;
+}
+
+.link-item:hover {
+    color: var(--tide-break);
+}
+
+
+/*******************************************************/
+/*                     Hero Section                    */
+/*******************************************************/
+
+.hero-section {
+    background:
+        var(--deepcurrent-fade),
+        url('../../media/images/gears_3.jpg') no-repeat center center / cover;
+    height: 65vh;
+    padding-top: 50px;
+}
+
+.hero-section .content {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: var(--hero-title);
+    color: var(--sea-foam-sky);
+}
+
+.hero-section .body-copy {
+    color: var(--sea-foam-sky);
+    padding-top: 16px;
+}
+
+.cta-container {
+    padding-top: 40px;
+}
+
+
+@media (max-width: 768px){
+    .hero-section .content {
+        margin-inline: auto;
+        /* text-align: center; */
+    }
+
+    .hero-title {
+        font-size: 2.125rem;
+    }
+
+    .hero-section .body-copy {
+        font-size: 1.125rem;
+    }
+
+    .hero-section .cta {
+        font-size: 1.125rem;
+    }
+} 
