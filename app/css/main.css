@@ -33,7 +33,7 @@
     --hero-title: 2.75rem;
     --title: 2.25rem;
     --subheading: 1.5rem;
-    --section-title: 1.75rem;
+    --section-title: 2rem;
 
     /*      font weight             */
 
@@ -121,9 +121,18 @@ img {
     color: var(--sea-foam-sky);
 }
 
+.cta-primary-inverse:hover {
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--ff-main);
     font-size: var(--body-copy);
+        overflow-x: clip;
 }
 
 
@@ -159,6 +168,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    overflow-x: clip;
+
 }
 
 .navbar .container {
@@ -180,8 +191,18 @@ body {
 
 .nav-menu {
     display: flex;
+    flex: 0 0 auto;
     width: 450px;
     justify-content: space-between;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .link-item {
@@ -196,14 +217,85 @@ body {
 }
 
 
+/* Base */
+.menu-toggle {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--blue-trench);
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+    top: 0;
+}
+.menu-toggle span:nth-child(2) {
+    top: 10px;
+}
+.menu-toggle span:nth-child(3) {
+    top: 20px;
+}
+
+/* When active - turn into "X" */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--sea-foam-sky);
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        width: 200px;
+    }
+
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+
+
 /*******************************************************/
 /*                     Hero Section                    */
 /*******************************************************/
 
 .hero-section {
     background:
-        var(--deepcurrent-fade),
-        url('../../media/images/gears_3.jpg') no-repeat center center / cover;
+    var(--deepcurrent-fade),
+    url('../../media/images/gears_3.jpg') no-repeat center center / cover;
     height: 65vh;
     padding-top: 50px;
 }
@@ -234,16 +326,87 @@ body {
         margin-inline: auto;
         /* text-align: center; */
     }
-
+    
     .hero-title {
         font-size: 2.125rem;
     }
-
+    
     .hero-section .body-copy {
         font-size: 1.125rem;
     }
-
+    
     .hero-section .cta {
         font-size: 1.125rem;
     }
 } 
+
+/*******************************************************/
+/*                  About Us Section                   */
+/*******************************************************/
+
+.about-us {
+    height: 90vh;
+    /* padding-top: 120px; */
+    padding-bottom: 50px;
+    /* background-image: url('../../media/images/tools.jpg');
+    background-repeat: no-repeat;
+    background-position: calc(100% + 250px) center;
+    background-size: auto 100%; */
+}
+
+.about-us .container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+}
+
+.about-us .content {
+    /* max-width: 550px; */
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 120px 50px 120px 0;
+    box-sizing: border-box;    
+}
+
+.about-us .section-title {
+    font-size: var(--section-title);
+    color: var(--deep-current);
+    padding-bottom: 50px;
+}
+
+.about-us .subheading {
+    font-size: var(--subheading);
+    color: var(--deep-current);
+    padding-bottom: 34px;
+}
+
+.about-us .body-copy {
+    color: var(--deep-current);
+    padding-bottom: 34px;
+}
+
+.about-us .image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    background: url('../../media/images/tools.jpg') center/cover no-repeat;
+     margin-right: calc((100vw - 95vw) / -2); /* pushes out exactly half of the leftover space */
+}
+
+/* Mobile: stack with image below */
+@media (max-width: 768px) {
+    .about-us-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .about-us .content,
+    .about-us .image {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .about-us .image {
+        height: 300px; /* adjust as needed */
+    }
+}
+
