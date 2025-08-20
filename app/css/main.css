@@ -586,4 +586,119 @@ form {
 
 .form-control button {
     border: none;
+    font-size: var(--body-copy);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/******************************************/
+/*                 footer                 */
+/******************************************/
+
+
+footer {
+    background-color: rgb(44, 44, 44);
+    padding-top: 50px;
+}
+
+.footer-heading {
+    position: relative;
+    font-size: var(--body-copy);
+    color: var(--sea-foam-sky);
+    margin-bottom: 15px;
+}
+
+.devider {
+    height: 2px;
+    width: 100%;
+    background-color: rgb(58, 58, 58);
+}
+
+.footer-heading::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 48px;
+    background-color: var(--sea-foam-sky);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content-top {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+.footer-quick-links, .footer-services, .footer-contact {
+    margin-bottom: 34px;
+    color: var(--sea-foam-sky);
+}
+
+footer ul li {
+    font-size: var(--body-copy);
+    line-height: var(--lh-body);
+}
+
+footer ul li a {
+    color: var(--sea-foam-sky);
+}
+
+
+.footer-content-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    text-align: center;
+    gap: 25px;
+}
+
+.footer-content-bottom p {
+    color: var(--sea-foam-sky);
+    font-size: 14px;
+}
+
+.footer-content-bottom p span {
+    color: var(--tide-break);
+}
+
+@media (min-width: 786px) {
+    footer {
+        padding-top: 5rem;
+    }
+
+    .footer-content-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding-bottom: 5rem;
+    }
+
+    .footer-logo img {
+        width: 250px;
+    }
+
+    .first-dv {
+        height: 70px;
+        width: 2px;
+        align-self: center;
+    }
+
+    .footer-content .right-content {
+        display: flex;
+        gap: 5rem;
+    }
+
+    .footer-content-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
