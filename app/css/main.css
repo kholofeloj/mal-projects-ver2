@@ -112,6 +112,7 @@ span.bold {
     border-radius: 10px;
     transition: all 250ms ease-in-out;
     font-weight: var(--fw-500);
+    cursor: pointer;
 }
 
 .cta-primary {
@@ -135,6 +136,10 @@ span.bold {
 .cta-primary-inverse {
     background-color: var(--blue-trench);
     color: var(--sea-foam-sky);
+}
+
+.cta-primary-inverse:hover {
+    background-color: var(--tide-break);
 }
 
 
@@ -425,7 +430,7 @@ body {
     position: relative;
     background-color: var(--sea-foam-sky);
     padding: 100px 0;
-    z-index: -2;
+    /* z-index: -2; */
 }
 
 .our-services .section-information {
@@ -435,6 +440,7 @@ body {
 }
 
 .row-content {
+    
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -519,4 +525,65 @@ body {
     text-align: left;
     margin-top: 1rem;
   }
+}
+
+
+/*******************************************************/
+/*                  Services Section                   */
+/*******************************************************/
+
+
+.contact-us {
+    padding: 100px 0;
+}
+
+.contact-us .section-title {
+    text-align: center;
+    padding-bottom: 7rem;
+}
+
+form {
+    margin-inline: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(99, 99, 99, 0.1);
+    box-shadow: 0 0 10px 0 rgba(0, 27, 72, 0.25);
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.form-control label {
+    padding-bottom: 1rem;
+}
+
+.form-control input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+}
+
+.form-control input:focus {
+    outline: 1px solid var(--blue-trench);
+}
+
+.form-control textarea {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-control button {
+    border: none;
 }
