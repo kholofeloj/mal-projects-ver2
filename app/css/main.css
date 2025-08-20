@@ -431,7 +431,7 @@ body {
 .our-services .section-information {
     margin-inline: auto;
     max-width: 450px;
-    padding-bottom: 60px;
+    padding-bottom: 7rem;
 }
 
 .row-content {
@@ -449,6 +449,16 @@ body {
     margin-bottom: 1rem;
 }
 
+.services-list {
+    padding-left: 7rem;
+}
+
+@media (max-width: 924px) {
+    .services-list {
+        padding-left: 3.5rem;
+    }
+}
+
 .services-list li {
     margin-bottom: 0.75rem;
     display: flex;
@@ -463,14 +473,11 @@ body {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    shape-image-threshold: 1.5rem;
     height: 1.5rem;
-    /* border-radius: 50%; */
-    /* background: var(--blue-trench);
-    color: var(--sea-foam-sky); */
-    font-size: 0.9rem;
-    align-items: center;
-    justify-content: center;
+    width: 1.5rem;
+    background-image: url('../../media/icons/check-circle.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .image-container {
@@ -486,6 +493,17 @@ body {
     flex-direction: row-reverse;
 }
 
+.services-cta {
+    padding-top: 7rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.services-cta p {
+    padding-bottom: 3rem;
+}
+
+
 @media (max-width: 768px) {
   .row-content {
     flex-direction: column;
@@ -497,7 +515,7 @@ body {
     flex-direction: column;
   }
 
-  .service-list {
+  .services-list {
     text-align: left;
     margin-top: 1rem;
   }
