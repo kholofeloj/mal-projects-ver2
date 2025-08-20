@@ -186,7 +186,32 @@
     <!-- Contact Us Section -->
     <section class="contacu-us" id="contact-us">
         <div class="container">
+            <h1 class="section-title">
+                Contact Us
+            </h1>
 
+            <div class="contact-form">
+                <form action="/app/php/main.php" method="post">
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="name">Email</label>
+                        <input type="text" name="email" id="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="contactNumber">Contact Number</label>
+                        <input type="text" name="contactNumber" id="contactNumber" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </div>
+                    
+
+                </form>
+            </div>
         </div>
     </section>
 
