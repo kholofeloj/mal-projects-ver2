@@ -11,6 +11,7 @@
     --costal-mist: rgba(151, 202, 219, 1);
     --sea-foam-sky: rgba(222, 232, 241, 1);
     --sea-foam-sky100: rgba(222, 232, 241, .95);
+    --off-white: rgb(248, 248, 248);
 
     /*         tints            */
 
@@ -22,11 +23,15 @@
     /*        Gradients          */
     /*****************************/
     
-    --blue-fade: linear-gradient(90deg, rgb(1,138,190), rgba(1,138,190,0));
+    --blue-fade: linear-gradient(90deg, rgb(1,138,190) 35%, rgba(1, 136, 190, 0.5));
     --bluetrench-fade: linear-gradient(90deg, rgba(0, 68, 129, 1), rgba(0, 68, 129, 0));
     --deepcurrent-fade: linear-gradient(90deg, rgba(0, 27, 72, 1) 30%, rgba(0, 27, 72, 0.5));
     --deepcurrent-fade-500: linear-gradient(90deg, rgba(0, 27, 72, 0.5) 30%, rgba(0, 27, 72, 0.5));
     
+    /*           Shadows          */
+    /******************************/
+
+    --shadow: 0 0 25px 0 rgba(0, 0, 0, .5);
     
     /*        Typography          */
     /******************************/
@@ -36,12 +41,15 @@
     
     /*          font size           */
     
-    --body-copy: 1.25rem;
-    --card-copy: 1.125rem;
+    --body-copy: 1rem;
+    --card-heading: 1.125rem;
     --hero-title: 2.75rem;
     --title: 2.25rem;
     --subheading: 1.5rem;
     --section-title: 2rem;
+    --page-title: 3rem;
+    --small-text: .85rem;
+    --xs-text: .75rem;
 
     /*      font weight             */
 
@@ -107,6 +115,13 @@ span.bold {
     color: var(--deep-current);
     padding-bottom: 50px;
 }
+.card-heading {
+    font-size: var(--card-heading);
+}
+
+.card-copy {
+    font-size: var(--small-text);
+}
 
 .subheading {
     font-size: var(--subheading);
@@ -121,6 +136,7 @@ span.bold {
     transition: all 250ms ease-in-out;
     font-weight: var(--fw-500);
     cursor: pointer;
+    font-size: var(--small-text);
 }
 
 .cta-primary {
@@ -162,7 +178,7 @@ html {
 body {
     font-family: var(--ff-main);
     font-size: var(--body-copy);
-        overflow-x: clip;
+    overflow-x: clip;
 }
 
 
@@ -569,6 +585,7 @@ form {
 
 .form-control label {
     padding-bottom: 1rem;
+    font-size: var(--body-copy);
 }
 
 .form-control input {
@@ -576,7 +593,7 @@ form {
     margin-bottom: 1rem;
     border-radius: 10px;
     border: none;
-    font-size: 1rem;
+    font-size: var(--small-text);
 }
 
 .form-control input:focus {
@@ -588,7 +605,7 @@ form {
     margin-bottom: 1rem;
     border-radius: 10px;
     border: none;
-    font-size: 1rem;
+    font-size: var(--small-text);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -651,7 +668,7 @@ footer {
 }
 
 footer ul li {
-    font-size: 1rem;
+    font-size: var(--body-copy);
     line-height: 2.3;
 }
 
@@ -671,7 +688,7 @@ footer ul li a {
 
 .footer-content-bottom p {
     color: var(--sea-foam-sky);
-    font-size: 14px;
+    font-size: var(--small-text);
 }
 
 .footer-content-bottom p span {
@@ -731,7 +748,7 @@ footer ul li a {
 
 .page-title-section .section-title {
     color: var(--sea-foam-sky);
-    font-size: 2.75rem;
+    font-size: var(--page-title);
 }
 
 
@@ -742,10 +759,11 @@ footer ul li a {
 
 .who-are-we {
     padding: 5rem 0;
+    color: var(--deep-current);
 }
 
 .who-are-we .section-title {
-    font-size: 2.75rem;
+    font-size: var(--section-title);
     text-align: center;
 }
 
@@ -764,6 +782,7 @@ footer ul li a {
     inset: 0;
     background: var(--blue-trench-500);
     mix-blend-mode: multiply; 
+    border-radius: 10px;
 }
 
 
@@ -773,5 +792,200 @@ footer ul li a {
 }
 
 .horizontal-cards {
+    padding-bottom: 4rem;
+}
+
+.horizontal-card {
+    background: var(--sea-foam-sky);
+    padding: 35px 55px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 5rem;
+    overflow: clip;
+
+}
+
+.horizontal-card:nth-child(n)::before {
+    font-size: 11rem;
+    position: absolute;
+    font-family: var(--ff-main);
+    font-weight: 800;
+    left: -5px;
+    color: var(--blue-trench);
+}
+
+.horizontal-card:nth-child(2)::before {
+        content: "1";
+}
+
+.horizontal-card:nth-child(3)::before {
+        content: "2";
+}
+
+.horizontal-card:nth-child(4)::before {
+        content: "3";
+}
+
+.horizontal-card .left-number {
+    /* background-color: var(--sea-foam-sky); */
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* vertical-align: middle; */
+}
+
+.horizontal-card .left-number h3 {
+    margin-bottom: -30px;
+
+}
+
+
+/************************************************/
+/*             What Do We Do Section            */
+/************************************************/
+
+.what-do-we-do {
+    padding: 4rem 0;
+    background: var(--sea-foam-sky);
+}
+
+.what-do-we-do .row-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.what-do-we-do .text-block {
+    max-width: 550px;
+}
+
+.what-do-we-do .text-block p {
+    margin-bottom: 50px;
+    color: var(--deep-current);
+}
+
+.vertical-cards {
+    display: flex;
+    margin-inline: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.vertical-card {
+    flex: 1 1 350px;
+    background: var(--off-white);
+    box-shadow: 0 0 10px 0 var(--shadow);
+    border-radius: 10px;
+    padding: 3rem;
+    /* max-height: 360px; */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    color: var(--deep-current);
+
     
+}
+
+.vertical-card svg {
+    fill: var(--deep-current);
+    height: 5rem;
+    width: 5rem;
+}
+
+.about-page-cta {
+    max-width: 768px;
+    margin-inline: auto;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.about-page-cta p {
+    margin-bottom: 2rem;
+}
+
+
+/************************************************/
+/*             Ho can We Help Section           */
+/************************************************/
+
+.how-can-we-help {
+    padding: 5rem 0;
+    background: 
+    var(--blue-fade),
+    url('../../media/images/gears_2.jpg') no-repeat center center / cover;
+    text-align: center;
+}
+
+.how-can-we-help .section-title {
+    color: var(--sea-foam-sky);
+    padding: 0;
+}
+
+/************************************************/
+/*                 Blue cards Section           */
+/************************************************/
+
+.blue-cards {
+    padding: 5rem 0;
+}
+
+.blue-cards .container {
+    max-width: 768px;
+}
+
+.blue-cards p {
+    text-align: center;
+    color: var(--deep-current);
+}
+
+.blue-cards p:nth-child(1) {
+    margin-bottom: 5rem;
+}
+
+
+.blue-cards .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 25px;
+    margin: 5rem 0;
+}
+
+.blue-cards .card {
+    background: var(--tide-break);
+    color: var(--off-white);
+    flex: 1 1 350px;
+    max-width: 100%;
+    padding: 3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card .card-copy {
+        color: var(--off-white);
+}
+
+/************************************************/
+/*         Mission and Vision Section           */
+/************************************************/
+
+.mission-vision {
+    padding: 5rem 0;
+    background: var(--sea-foam-sky);
+}
+
+.mission-vision::after {
+    content: "../../media";
 }
