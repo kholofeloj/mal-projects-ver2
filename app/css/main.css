@@ -765,3 +765,13 @@ footer ul li a {
     background: var(--blue-trench-500);
     mix-blend-mode: multiply; 
 }
+
+
+/*********      How we work     **************/
+.how-we-work .body-copy {
+    padding: 4rem 0;
+}
+
+.horizontal-cards {
+    
+}
