@@ -341,7 +341,7 @@ body {
 .hero-section {
     background:
     var(--deepcurrent-fade),
-    url('../../media/images/gears_3.jpg') no-repeat center center / cover;
+    url('../../media/images/gears_3.webp') no-repeat center center / cover;
     height: 65vh;
     padding-top: 50px;
 }
@@ -422,7 +422,7 @@ body {
 .about-us .image {
     flex: 1 1 50%;
     max-width: 50%;
-    background: url('../../media/images/tools.jpg') center/cover no-repeat;
+    background: url('../../media/images/tools.webp') center/cover no-repeat;
     margin-right: calc((100vw - 80vw) / -2); /*pushes out exactly half of the leftover space*/
 }
 
@@ -740,7 +740,7 @@ footer ul li a {
     padding: 5rem;
     background:
     var(--deepcurrent-fade-500),
-    url('../../media/images/gears_4.jpg')
+    url('../../media/images/gears_4.webp')
     no-repeat center center / cover;
     text-align: center;
     color: var(--sea-foam-sky);
@@ -922,7 +922,7 @@ footer ul li a {
     padding: 5rem 0;
     background: 
     var(--blue-fade),
-    url('../../media/images/gears_2.jpg') no-repeat center center / cover;
+    url('../../media/images/gears_2.webp') no-repeat center center / cover;
     text-align: center;
 }
 
@@ -1049,4 +1049,29 @@ footer ul li a {
     .text-content .section-title {
         padding-bottom: 2rem;
     }
+}
+
+/************************************************/
+/*          Our Value Cores Section             */
+/************************************************/
+
+.value-cores {
+    padding: 5rem 0;
+    color: var(--deep-current);
+}
+
+.value-cores .horizontal-card:nth-child(1)::before {
+        content: "1";
+}
+.value-cores .horizontal-card:nth-child(2)::before {
+        content: "2";
+}
+.value-cores .horizontal-card:nth-child(3)::before {
+        content: "3";
+}
+.value-cores .horizontal-card:nth-child(4)::before {
+        content: "4";
+}
+.value-cores .horizontal-card:nth-child(5)::before {
+        content: "5";
 }
