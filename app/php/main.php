@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
     $mailFrom = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $mailTo = "info@janmckkreatives.co.za"; 
+    $mailTo = "info@meetsi.co.za"; 
     $subject = "New message from: " . $name;
     
     // HTML email body
