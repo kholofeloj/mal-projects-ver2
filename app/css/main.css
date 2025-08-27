@@ -415,33 +415,28 @@ body {
 }
 
 /* @media (max-height: 600px) */
-
 /*******************************************************/
 /*                  About Us Section                   */
 /*******************************************************/
 
 .about-us {
-    /* height: 90vh; */
-    /* padding-top: 120px; */
     padding-bottom: 50px;
-    /* background-image: url('../../media/images/tools.jpg');
-    background-repeat: no-repeat;
-    background-position: calc(100% + 250px) center;
-    background-size: auto 100%; */
 }
 
 .about-us .container {
     display: flex;
     flex-wrap: wrap;
-    height: 90vh;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .about-us .content {
-    /* max-width: 550px; */
     flex: 1 1 50%;
     max-width: 50%;
     padding: 120px 50px 120px 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
 
 .about-us .body-copy {
@@ -449,33 +444,70 @@ body {
     padding-bottom: 34px;
 }
 
-.about-us .image {
+/* .about-us .image {
     flex: 1 1 50%;
     max-width: 50%;
-    background: url('../../media/images/tools.webp') center/cover no-repeat;
-    margin-right: calc((100vw - 80vw) / -2); /*pushes out exactly half of the leftover space*/
+    min-height: 300px;
+    background-image: url('../../media/images/tools-reversed.webp') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 500px; /* desktop max-height
+ } */
+
+ .about-us .image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Mobile: stack with image below */
+.about-us .image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* desktop cap */
+    object-fit: contain;
+}
+
+/* Tablet: smaller image, still right side */
+@media (max-width: 992px) {
+    .about-us .content {
+        padding: 80px 30px;
+    }
+
+    .about-us .image {
+        max-height: 350px; /* shrink on tablet */
+    }
+    
+    .about-us .image img {
+        padding-top: 10rem;
+    }
+}
+
+/* Mobile: stack, image below text */
 @media (max-width: 768px) {
     .about-us .container {
         flex-direction: column;
-        height: auto;
     }
 
     .about-us .content,
     .about-us .image {
         max-width: 100%;
         flex: 1 1 100%;
+        padding: 20px;
     }
 
     .about-us .image {
-        height: 300px; /* adjust as needed */
+        order: 2;        /* image below text */
+        height: 250px;   /* smaller height */
+        max-height: 250px;
     }
 
+    .about-us .content {
+        order: 1;
+    }
 }
-
-
 
 /*******************************************************/
 /*                  Services Section                   */
@@ -486,6 +518,7 @@ body {
     background-color: var(--sea-foam-sky);
     padding: 100px 0;
     /* z-index: -2; */
+    overflow-x: hidden;
 }
 
 .our-services .section-information {
