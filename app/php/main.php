@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 
     // Send email and handle result
     if (mail($mailTo, $subject, $txt, $headers)) {
-        header("Location: ../../mail.html?mailsend");  // Redirect with success message
+        header("Location: ../../malp.html?mailsend");  // Redirect with success message
         exit();  // Prevent further script execution
     } else {
         echo "Error: Unable to send email.";
