@@ -388,9 +388,6 @@ body {
 
 @media (max-width: 401px) {
 
-    .hero-section {
-        /* height: 75vh; */
-    }
     .hero-title{
         font-size: 1.75rem;
     }
